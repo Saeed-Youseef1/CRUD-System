@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <div class="crud"> 
+        <div class="head">
+            <h1 class="heading-title">CRUD</h1>
+            <p>Product Mangement System</p>
+            <p>Create | Read | Update | Delete Proudcts</p>
+        </div>
+        <div class="input">
+            <div class="title">
+                <input type="text" id="id" name="" placeholder="ID" />
+                <input type="text" id="title" name="" placeholder="Title"/>
+            </div>
+            <div class="price">
+                <input type="number" min="0" oninput="getTOtal()"  id="price" name="" placeholder="Price"/>
+                <input type="number" min="0" oninput="getTOtal()"  id="taxes" name="" placeholder="Taxes"/>
+                <input type="number" min="0" oninput="getTOtal()"  id="ads" name="" placeholder="Ads"/>
+                <input type="number" min="0" oninput="getTOtal()"  id="discount" name="" placeholder="Discount"/>
+                <p class="p-total" id="pTotal">Total: <span id="total"></span> EGP</p>
+            </div>
+            <div>
+                <input type="number" min="0" id="count" name="" placeholder="Count" />
+            </div>
+            <div>
+                <input type="text"  id="category" name="" placeholder="Category" />
+            </div>
+            <div>
+                <button id="submit">Create</button>
+            </div>
+        </div>
+        <div class="output">
+            <div class="search">
+                <div class="up-search">
+                    <input name="" id="search" type="search" placeholder="Search Or Category" onkeyup="searchProduct(this.value)">
+                    <svg class="h-8 w-8 text-red-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <circle cx="10" cy="10" r="7" />
+                        <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                </div>
+                <div class="search-btns">
+                    <button type="button" onclick="getSearchMood(this.id)" id="searchTitle">Search By Title</button>
+                    <button type="button" onclick="getSearchMood(this.id)" id="searchCategory">Search By Category</button>
+                </div>
+            </div>
+            <div id="del-all">
+                
+            </div>
+            <div class="data">
+                <table>
+                    <tr class="top-table">
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Taxes</th>
+                        <th>Ads</th>
+                        <th>Discount</th>
+                        <th>Total</th>
+                        <th>count</th>
+                        <th>Category</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                    
+                    <tbody id="tbody">
+                    
+                    </tbody>
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
